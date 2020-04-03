@@ -1,6 +1,6 @@
 ---
 title: "Exception of type 'Microsoft.Rest.Azure.CloudException' was thrown."
-date: 2020-04-03 14:22
+date: 2020-04-03 15:22
 categories: [Azure, Azure AD, PowerShell, KeyVault, Access Policies]
 tags: [azure, powershell, automation, keyvault, error, fix, access policy, azure ad, permission]
 toc: false
