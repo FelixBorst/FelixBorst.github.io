@@ -8,14 +8,12 @@
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 #--------------------------
 
-title: Just another of those small personal Microsoft Azure blogs...                          # the main title
+title: My personal Azure blog                          # the main title
 
 tagline: A blog by me - with lots of problems and hopefully some solutions to them.  # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  A minimal, portfolio, sidebar,
-  bootstrap Jekyll theme with responsive web design
-  and focuses on text presentation.
+  This is just another one of those personal Azure blogs. 
 
 # Replace with the website url, e.g. 'https://username.github.io'
 url: 'protocol://domain'
