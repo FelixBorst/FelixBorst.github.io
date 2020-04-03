@@ -26,9 +26,8 @@ It appears, because Azure does a validation check on object IDs which are relate
 
 ### The fix ###
 
-When running ``` Set-AzKeyVaultAccessPolicy ```
-
-make sure to include the flag ```-BypassObjectIdValidation``` to make the command work again. Kudos to the user 'ratnakarsinha' on GitHub for posting the issue here:  
-https://github.com/Azure/azure-powershell/issues/10029
+When running ``` Set-AzKeyVaultAccessPolicy ``` make sure to include the flag ```-BypassObjectIdValidation``` to make the command work again.  
+Kudos to the user 'ratnakarsinha' on GitHub for posting the issue here:  
+[Azure PowerShell GitHub Issue #10029](https://github.com/Azure/azure-powershell/issues/10029)
 
 Unfortunately ``` Set-AzKeyVaultAccessPolicy ``` is not the only command which is suffering from this permission issue. Commands like ``` Get-AzRoleAssignment ``` have a similar issue but do not offer the same flag as ``` Set-AzKeyVaultAccessPolicy ``` does. To solve this issue in these cases make sure your user running the command is whitelisted in the **Microsoft-Graph-API** to read directory data.
