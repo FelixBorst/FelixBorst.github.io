@@ -1,56 +1,56 @@
+---
+layout: compress
+# Default layout
+# v2.0
+# https://github.com/cotes2020/jekyll-theme-chirpy
+# © 2017-2019 Cotes Chung
+# MIT Licensed
+---
+
 <!DOCTYPE html>
-<html lang="en">
 
-{% include structure/head.html %}
+{% capture prefer_mode %}
+  {% if site.theme_mode != "dual" %}
+    mode="{{ site.theme_mode }}"
+  {% endif %}
+{% endcapture %}
 
-<body>
+<html lang="en" {{ prefer_mode }} >
 
-{% include bars/nav.html %}
+  {% include head.html %}
 
-{% capture col1 %}{% if page.narrow %}3{% else %}4{% endif %}{% endcapture %}
-
-{% capture col2 %}{% if page.narrow %}9{% else %}8{% endif %}{% endcapture %}
-
-<div class="container site-container" id="top">
-    <div class="row">
-        <div class="d-none d-lg-block col-lg-4 col-xl-{{ col1 }} side">
-            {% include bars/side.html %}
-        </div>
-        <div class="col-md-12 col-lg-8 col-xl-{{ col2 }} pb-4 content">
-            {{ content }}
-        </div>
-        <div class="col-md-12 d-lg-none bottom">
-            {% include bars/bottom.html %}
-        </div>
+  <body data-spy="scroll" data-target="#toc">
+    <div id="sidebar" class="d-flex flex-column">
+      {% include sidebar.html %}
     </div>
-</div>
+    <div id="main-wrapper">
+      {% include topbar.html %}
+      <div id="main">
 
-<script type="text/javascript">
-/*!
- * IE10 viewport hack for Surface/desktop Windows 8 bug
- * Copyright 2014-2017 The Bootstrap Authors
- * Copyright 2014-2017 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
+        {% capture _content %}
+          {{ content }}
+        {% endcapture %}
 
-// See the Getting Started docs for more information:
-// https://getbootstrap.com/getting-started/#support-ie10-width
+        {% include fixlinenos.html %}
+        {{ _content }}
 
-(function () {
-    'use strict'
+        {% include footer.html %}
+      </div>
+      {% include search-results.html %}
+    </div>
 
-    if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-        var msViewportStyle = document.createElement('style')
-        msViewportStyle.appendChild(
-            document.createTextNode(
-                '@-ms-viewport{width:auto!important}'
-            )
-        )
-        document.head.appendChild(msViewportStyle)
-    }
-}())
-</script>
+    <div id="mask"></div>
 
-</body>
+    <a id="back-to-top" href="#" class="btn btn-lg btn-box-shadow" role="button">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    {% if jekyll.environment == 'production' %}
+      {% include google-analytics.html %}
+    {% endif %}
+
+    {% include search-loader.html %}
+
+  </body>
 
 </html>
