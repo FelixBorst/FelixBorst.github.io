@@ -10,7 +10,7 @@
 
 title: My personal Azure blog                          # the main title
 
-tagline: A blog by me - with lots of problems and hopefully some solutions to them.  # it will display as the sub-title
+tagline: I am working at Microsoft as a Premier Field Engineer. Since I started with Azure, my goal is to automate each and every aspect of this platform! This is a blog where I try to remember challenges I came across and how I solved them.    # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   This is just another one of those personal Azure blogs. 
@@ -20,7 +20,7 @@ url: 'protocol://domain'
 
 author: Felix Borst                  # change to your full name
 
-avatar: /assets/img/sample/avatar.jpg   # support internet resources
+avatar: /assets/img/avatar.jpg   # support internet resources
 
 github:
   username: FelixBorst             # change to your github username
