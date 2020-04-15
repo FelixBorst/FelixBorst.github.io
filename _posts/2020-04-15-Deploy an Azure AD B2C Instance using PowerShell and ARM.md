@@ -41,7 +41,7 @@ $resource = '74658136-14ec-4630-ad9b-26e160ff0fc6'
 $token = [Microsoft.Azure.Commands.Common.Authentication.AzureSession]::Instance.AuthenticationFactory.Authenticate($context.Account, $context.Environment, $context.Tenant.Id, $null, "Never", $null, $resource)
 ```
 
-`$resource` points to a GUID. This GUID references an Azure AD Application (built-into Azure) which has the base URL `main.iam.ad.ext.azure.com`. So check that you use the same!  
+`$resource` points to a GUID. This GUID references an built-in Azure AD Application which has the base URL `main.iam.ad.ext.azure.com`. So make sure your GUID matches up!  
 
 This next section performs the actual API call. You can see that we inserted the token with the Bearer prefix. Also important: `$B2cCompanyName`, `$B2cCountryCode` and  `$B2cDomainPrefix` need to be valid values, e.g.:
 
@@ -66,7 +66,7 @@ $b2CTenantId = $result.Content.Replace('"', '')
 
 For this action, we will need the following ARM-Template:
 
-```arm
+```json
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
