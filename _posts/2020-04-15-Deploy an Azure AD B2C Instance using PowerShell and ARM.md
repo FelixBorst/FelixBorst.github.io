@@ -6,27 +6,27 @@ tags: [azure, powershell, automation, b2c, tenant, ad, aad, azure ad, arm, templ
 toc: false
 ---
 
-### Introduction ###
+## Introduction ##
 
 During a project we recently had the question pop up: "What if we want to automate the deployment of an Azure AD B2C instance?".  
 My answer: "Let's do it".
 
 To be honest it is not as hard as you may think it is. There are a few catches here and there, but I'm gonna highlight them in this post.
 
-### The concept ###
+## The concept ##
 
 An Azure AD B2C Instance is similar to the good old B2B instance most of you should be familiar with.  
 The key difference lies in it's name: It's customer focused. Meaning it offers a different feature set compared to the B2B variant.  
 For a full comparison check the [documentation](https://docs.microsoft.com/en-us/azure/active-directory/b2b/compare-with-b2c).  
-But back to topic, how to you automatically deploy it?  
-Well, first of all you have to understand, that there are two steps involved:
+But back to topic, how to you deploy it?  
+Well, first of all you have to understand that this is a two steps process:
 
 1. Creating the Azure AD B2C Instance.
 2. Making it manageable through the Azure Portal (aka. attaching it to a resource group).
 
-### The process ###
+## The process ##
 
-## Creating the Azure AD B2C Instance ##
+### Creating the Azure AD B2C Instance ###
 
 The first steps requires an Azure AD API Call and that's why we need an access token.  
 You may be familiar with the typical Azure Access Tokens, however this one is slightly different as we are not calling `management.azure.com` but `main.iam.ad.ext.azure.com` instead. As you need to generate an access token with the target URL in mind, we are going a slightly different route.  
@@ -62,7 +62,7 @@ $result = Invoke-WebRequest `
 $b2CTenantId = $result.Content.Replace('"', '')
 ```
 
-## Attaching the B2C Tenant to an Azure Resource Group ##
+### Attaching the B2C Tenant to an Azure Resource Group ###
 
 For this action, we will need the following ARM-Template:
 

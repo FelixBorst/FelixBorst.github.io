@@ -6,7 +6,7 @@ tags: [azure, powershell, automation, keyvault, error, fix, access policy, azure
 toc: false
 ---
 
-### Introduction ###
+## Introduction ##
 
 I recently came across an interesting error during pipeline execution of PowerShell scripts using Azure DevOps Release pipelines.
 
@@ -20,11 +20,11 @@ So I started off my investigation. First point was to sign in as the service pri
 
 I soon realized the issue was really RBAC-related. But it was not a permission issue on an Azure resource but an access-issue on the Azure AD instead.
 
-### So why does this issue appear? ###
+## So why does this issue appear? ##
 
 It appears, because Azure does a validation check on object IDs which are related to service principals or user objects. It basically checks if the user really exists before trying to assign him a certain permission. But if the user executing the command does not have access to the Azure AD at all, then this script fails because a validation is not possible.
 
-### The fix ###
+## The fix ##
 
 When running ```Set-AzKeyVaultAccessPolicy``` make sure to include the flag ```-BypassObjectIdValidation``` to make the command work again.  
 Kudos to the user 'ratnakarsinha' on GitHub for posting the fix here:  
