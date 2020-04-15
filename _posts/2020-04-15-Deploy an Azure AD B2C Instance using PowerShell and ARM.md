@@ -105,11 +105,11 @@ For this action, we will need the following ARM-Template:
 This ARM-Template needs three input parameters:
 
 - `Location`: Depending on what you've used above for `$B2cCountryCode` you have to pick the correct location. The matching regions can be found [here](https://docs.microsoft.com/en-us/azure/active-directory-b2c/data-residency#data-residency).  
-As an example: If `$B2cCountryCode` is DE (for Germany), the matching region would be `Europe`.
-- `TenantId`: This is the tenant id which gets returned by executing the API-Call above. If you've run the script it should be stored in the variable `$b2CTenantId`.
+As an example: If `$B2cCountryCode` is `DE` (for Germany), the matching region would be `Europe`.
+- `TenantId`: This is the tenant ID which gets returned by executing the API-Call above. If you've run the script it should be stored in the variable `$b2CTenantId`.
 - `Name`: This is the full name of the tenant. Should be '`$B2cDomainPrefix`.onmicrosoft.com'.
 
-The B2C-Instance should not appear in the resource group, into which you deployed the ARM-Template into.  
+The B2C-Instance should now appear in the resource group, into which you deployed the ARM-Template.  
 
 Hope this helped you - if you have any questions, feel free to hit me up :)
 
